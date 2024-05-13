@@ -1,11 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://dx2nuet38b2lb"]
+[gd_scene load_steps=4 format=3 uid="uid://7xm0fbbhve1b"]
 
-[ext_resource type="Script" path="res://scene/2/planet.gd" id="1_ictb4"]
-[ext_resource type="PackedScene" uid="uid://drky0tcc4fx1d" path="res://scene/2/continent.tscn" id="2_2se5g"]
+[ext_resource type="Script" path="res://scene/4/chapter.gd" id="1_wi2r4"]
+[ext_resource type="PackedScene" path="res://scene/0/token.tscn" id="2_fv4ab"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7paps"]
 
-[node name="Planet" type="MarginContainer"]
+[node name="Chapter" type="MarginContainer"]
 custom_minimum_size = Vector2(5, 5)
 anchors_preset = 8
 anchor_left = 0.5
@@ -20,7 +20,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-script = ExtResource("1_ictb4")
+script = ExtResource("1_wi2r4")
 
 [node name="BG" type="Panel" parent="."]
 visible = false
@@ -32,11 +32,19 @@ layout_mode = 2
 theme_override_constants/separation = 0
 alignment = 1
 
-[node name="Gods" type="HBoxContainer" parent="HBox"]
+[node name="Tags" type="VBoxContainer" parent="HBox"]
 layout_mode = 2
-theme_override_constants/separation = 4
+theme_override_constants/separation = 0
 alignment = 1
 
-[node name="Continent" parent="HBox" instance=ExtResource("2_2se5g")]
+[node name="Damage" parent="HBox/Tags" instance=ExtResource("2_fv4ab")]
+visible = false
+layout_mode = 2
+
+[node name="Block" parent="HBox/Tags" instance=ExtResource("2_fv4ab")]
+visible = false
+layout_mode = 2
+
+[node name="Heal" parent="HBox/Tags" instance=ExtResource("2_fv4ab")]
 visible = false
 layout_mode = 2

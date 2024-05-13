@@ -23,17 +23,24 @@ func _ready() -> void:
 
 func init_arr() -> void:
 	arr.neighbor = ["linear", "diagonal"]
+	arr.tag = ["damage", "block", "heal"]
 
 
 func init_num() -> void:
 	num.index = {}
 	num.index.god = 0
+	
+	num.brick = {}
+	num.brick.a = 32
+	num.brick.r = num.brick.a / sqrt(2)
+	num.brick.n = 4
 
 
 func init_dict() -> void:
 	init_neighbor()
 	init_font()
 	init_territory()
+	init_tag()
 	
 	init_foundation()
 
@@ -90,6 +97,18 @@ func init_territory() -> void:
 		dict.territory.rank[_i] = description
 
 
+func init_tag() -> void:
+	dict.tag = {}
+	dict.tag.weight = {}
+	dict.tag.weight["damage"] = 8
+	dict.tag.weight["block"] = 4
+	dict.tag.weight["heal"] = 2
+	dict.tag.value = {}
+	dict.tag.value["damage"] = 5
+	dict.tag.value["block"] = 8
+	dict.tag.value["heal"] = 4
+
+
 func init_foundation() -> void:
 	dict.foundation = {}
 	dict.foundation.rank = {}
@@ -118,6 +137,10 @@ func init_scene() -> void:
 	
 	scene.planet = load("res://scene/2/planet.tscn")
 	scene.area = load("res://scene/2/area.tscn")
+	
+	scene.brick = load("res://scene/3/brick.tscn")
+	
+	scene.chapter = load("res://scene/4/chapter.tscn")
 
 
 func init_vec():
@@ -126,6 +149,8 @@ func init_vec():
 	vec.size.area = Vector2(vec.size.sixteen * 3)
 	
 	vec.size.token = Vector2(vec.size.sixteen * 1.5)
+	vec.size.brick = Vector2.ONE * num.brick.a
+	vec.size.essence = vec.size.brick * 0.75
 	
 	init_window_size()
 

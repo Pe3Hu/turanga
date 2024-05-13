@@ -20,7 +20,7 @@ func init_basic_setting() -> void:
 
 
 func init_pantheons() -> void:
-	for _i in 12:
+	for _i in 2:
 		var input = {}
 		input.cradle = self
 	

@@ -4,6 +4,8 @@ extends MarginContainer
 #region vars
 @onready var index = $VBox/Index
 @onready var domain = $VBox/Domain
+@onready var foundation = $VBox/Foundation
+@onready var book = $VBox/Book
 
 var pantheon = null
 var planet = null
@@ -28,5 +30,6 @@ func init_basic_setting() -> void:
 	index.set_attributes(input)
 	
 	input.god = self
-	domain.set_attributes(input)
+	foundation.set_attributes(input)
+	book.set_attributes(input)
 #endregion

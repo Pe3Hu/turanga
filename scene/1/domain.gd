@@ -21,6 +21,9 @@ func init_basic_setting() -> void:
 
 
 func roll_areas() -> void:
+	if true:
+		return 
+	
 	var continent = god.planet.continent
 	var rank = god.planet.rank
 	var territories = Global.dict.territory.rank[rank].duplicate()
@@ -129,5 +132,4 @@ func roll_areas() -> void:
 	for area in areas:
 		area.domains.append(self)
 	#	area.recolor_based_on_domain(self)
-	
 #endregion

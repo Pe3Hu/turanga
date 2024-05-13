@@ -33,9 +33,10 @@ func add_god(god_: MarginContainer) -> void:
 
 
 func start_race() -> void:
-	for god in gods.get_children():
+	pass
+	#for god in gods.get_children():
 		#var god = gods.get_child(0)
-		god.domain.roll_areas()
+	#	god.domain.roll_areas()
 	
-	for area in continent.areas.get_children():
-		area.recolor_based_on_density()
+	#for area in continent.areas.get_children():
+	#	area.recolor_based_on_density()

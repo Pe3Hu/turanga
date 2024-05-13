@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://b6xt38h3tpi5k"]
+[gd_scene load_steps=7 format=3 uid="uid://b6xt38h3tpi5k"]
 
 [ext_resource type="Script" path="res://scene/1/god.gd" id="1_ceqed"]
 [ext_resource type="PackedScene" path="res://scene/0/token.tscn" id="2_i1lqr"]
 [ext_resource type="PackedScene" uid="uid://dgqtlgad4ffpe" path="res://scene/1/domain.tscn" id="3_yftbb"]
+[ext_resource type="PackedScene" uid="uid://crbittb2we813" path="res://scene/3/foundation.tscn" id="4_rf8jr"]
+[ext_resource type="PackedScene" uid="uid://c67ep20p1rp4d" path="res://scene/4/book.tscn" id="5_wdsqv"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7paps"]
 
@@ -38,4 +40,10 @@ layout_mode = 2
 
 [node name="Domain" parent="VBox" instance=ExtResource("3_yftbb")]
 visible = false
+layout_mode = 2
+
+[node name="Foundation" parent="VBox" instance=ExtResource("4_rf8jr")]
+layout_mode = 2
+
+[node name="Book" parent="VBox" instance=ExtResource("5_wdsqv")]
 layout_mode = 2
